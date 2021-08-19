@@ -319,7 +319,90 @@ void fun(char p[])
 
 ***
 
-## 007. 
+## 007. 字符数组的溢出（待完善）
+
+```c
+#include<stdio.h>
+#include<string.h>
+
+int main( int argc, char ** argv)
+{
+	char str1[9] = {'h', 'e', 'l', 'l', 'o', ' ', '!', '!', '!'};
+	char str2[9] = {'h', 'e', 'l', 'l', 'o', ' ', '!', '!'};
+	char str3[9] = "hello !!";
+	// char str4[9] = "hello !!!";		//error
+	char str5[9] = {'h', 'e', 'l', 'l', 'o', '\0', '!', '!'};
+	char str6[9] = "hello\0!!";
+	
+	
+	printf("str1 = %s\n", str1);
+	printf("str2 = %s\n", str2);
+	printf("str3 = %s\n", str3);
+	printf("str5 = %s\n", str5);
+	printf("str6 = %s\n", str6);
+	printf("\n");
+	printf("sizeof(str1) = %d\n", sizeof(str1));
+	printf("sizeof(str2) = %d\n", sizeof(str2));
+	printf("sizeof(str3) = %d\n", sizeof(str3));
+	printf("sizeof(str5) = %d\n", sizeof(str5));
+	printf("sizeof(str6) = %d\n", sizeof(str6));
+	printf("\n");
+	printf("strlen(str1) = %d\n", strlen(str1));
+	printf("strlen(str2) = %d\n", strlen(str2));
+	printf("strlen(str3) = %d\n", strlen(str3));
+	printf("strlen(str5) = %d\n", strlen(str5));
+	printf("strlen(str6) = %d\n", strlen(str6));
+	
+	return 0;
+} 
+```
+
+运行结果：
+
+str1 = hello !!!a
+str2 = hello !!
+str3 = hello !!
+str5 = hello
+str6 = hello
+
+sizeof(str1) = 9
+sizeof(str2) = 9
+sizeof(str3) = 9
+sizeof(str5) = 9
+sizeof(str6) = 9
+
+strlen(str1) = 12
+strlen(str2) = 8
+strlen(str3) = 8
+strlen(str5) = 5
+strlen(str6) = 5
+
+
+
+***
+
+## 008. \=\=\=、\=\=与\=
+
+#### 三个等号：等同符
+
+当等号两边的值为相同类型的时候，直接比较等号两边的值，值相同则返回true，若等号两边的值类型不同时直接返回false。（部分已经不支持）
+
+#### 两个等号：等值符
+
+当等号两边的值为相同类型时比较值是否相同，类型不同时会发生类型的自动转换，转换为相同的类型后再作比较。
+
+    类型转换规则：
+    1）如果等号两边是boolean、string、number三者中任意两者进行比较时，优先转换为数字进行比较。
+    2）如果等号两边出现了null或undefined,null和undefined除了和自己相等，就彼此相等
+#### 一个等号：赋值运算符
+
+参考：
+
+[三个等号和两个等号的区别（“==\=”与“\==”的区别）](https://blog.csdn.net/zephyr15/article/details/73864569)
+
+***
+
+## 009. 
 
 
 
@@ -327,6 +410,9 @@ void fun(char p[])
 
 
 
+***
+
+## 0
 
 
 
@@ -334,6 +420,29 @@ void fun(char p[])
 
 
 
+***
+
+## 0
+
+
+
+
+
+
+
+***
+
+## 0
+
+
+
+
+
+
+
+***
+
+## 0
 
 
 
