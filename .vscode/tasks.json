@@ -6,6 +6,10 @@
         "command": "g++",   // 要使用的编译器，C++用g++
         "args": [
             "${file}",
+            "-I",
+            "C:/Program Files (x86)/Eigen3/include/eigen3",
+            "-I",
+            "C:/Program Files (x86)/Eigen3/include",
             "-o",    // 指定输出文件名，不加该参数则默认输出a.exe，Linux下默认a.out
             "${fileDirname}/${fileBasenameNoExtension}.exe",
             "-g",    // 生成和调试有关的信息
