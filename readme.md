@@ -2,7 +2,7 @@
 
 ### FYI
 
-This repository documentes the road of my C/C++ learning, and it's still being updated...
+This repository documents the road of my C/C++ learning, and it's still being updated...
 
 I'm just a beginner, you can contact me if there is any mistake or suggestion.
 
