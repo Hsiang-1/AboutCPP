@@ -402,27 +402,134 @@ strlen(str6) = 5
 
 ***
 
-## 009. 
+## 009. 内存分配函数
 
+#### memset()
 
+```c
+#include <string.h>
+void *memset(void *s, int c, size_t n);
+功能：将s的内存区域的前n个字节以参数c填入
+参数：
+	s：需要操作内存s的首地址
+	c：填充的字符，c虽然参数为int，但必须是unsigned char , 范围为0~255
+	n：指定需要设置的大小
+返回值：s的首地址
+```
 
+#### memcpy()
 
+```c
+#include <string.h>
+void *memcpy(void *dest, const void *src, size_t n);
+功能：拷贝src所指的内存内容的前n个字节到dest所值的内存地址上。
+参数：
+	dest：目的内存首地址
+	src：源内存首地址，注意：dest和src所指的内存空间不可重叠，可能会导致程序报错
+	n：需要拷贝的字节数
+返回值：dest的首地址
+```
 
+#### memmove()
 
+```
+memmove()功能用法和memcpy()一样，区别在于：
+dest和src所指的内存空间重叠时，memmove()仍然能处理，不过执行效率比memcpy()低些
+```
+
+#### memcmp()
+
+```c
+#include <string.h>
+int memcmp(const void *s1, const void *s2, size_t n);
+功能：比较s1和s2所指向内存区域的前n个字节
+参数：
+	s1：内存首地址1
+	s2：内存首地址2
+	n：需比较的前n个字节
+返回值：
+	相等：=0
+	大于：>0
+	小于：<0
+```
+
+#### malloc()
+
+```c
+#include <stdlib.h>
+void *malloc(size_t size);
+功能：在内存的动态存储区(堆区)中分配一块长度为size字节的连续区域，用来存放类型说明符指定的类型。分配的内存空间内容不确定，一般使用memset初始化。
+参数：
+	size：需要分配内存大小(单位：字节)
+返回值：
+	成功：分配空间的起始地址
+	失败：NULL
+```
+
+#### free()
+
+```c
+#include <stdlib.h>
+void free(void *ptr);
+功能：释放ptr所指向的一块内存空间，ptr是一个任意类型的指针变量，指向被释放区域的首地址。对同一内存空间多次释放会出错。
+参数：
+	ptr：需要释放空间的首地址，被释放区应是由malloc函数所分配的区域。
+返回值：无
+```
+
+参考：
+
+[C 标准库 - <string.h>](https://www.runoob.com/cprogramming/c-standard-library-string-h.html)
 
 ***
 
-## 0
+## 010. 共用体/联合、位域/位字段、枚举（待完善）
+
+#### union/共用体/联合
+
+```c
+union [union tag]
+{
+   member definition;
+   member definition;
+   ...
+   member definition;
+} [one or more union variables];
+```
 
 
 
+#### 位域/位字段
+
+```c
+struct
+{
+  unsigned int widthValidated;
+  unsigned int heightValidated;
+} status;
+```
 
 
 
+#### enum/枚举
+
+```c
+enum　枚举名　{枚举元素1,枚举元素2,……};
+```
+
+
+
+参考：
+
+[C 共用体](https://www.runoob.com/cprogramming/c-unions.html)
+
+[C 位域](https://www.runoob.com/cprogramming/c-bit-fields.html)
+
+[C enum](https://www.runoob.com/cprogramming/c-enum.html)
 
 ***
 
-## 0
+## 011. 
 
 
 
