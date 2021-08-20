@@ -57,6 +57,7 @@
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "add.h": "c"
     }, // 格式化时调整include的顺序（按字母排序）
 }
