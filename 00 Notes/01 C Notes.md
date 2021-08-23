@@ -529,13 +529,28 @@ enum　枚举名　{枚举元素1,枚举元素2,……};
 
 ***
 
-## 011. 
+## 011. 库函数sprintf()
 
+#### 描述
 
+C 库函数 **int sprintf(char \*str, const char \*format, ...)** 发送格式化输出到 **str** 所指向的字符串。
 
+#### 声明
 
+下面是 sprintf() 函数的声明。
 
+```
+int sprintf(char *str, const char *format, ...)
+```
 
+#### 参数
+
+- **str** -- 这是指向一个字符数组的指针，该数组存储了 C 字符串。
+- **format** -- 这是字符串，包含了要被写入到字符串 str 的文本。它可以包含嵌入的 format 标签，format 标签可被随后的附加参数中指定的值替换，并按需求进行格式化。
+
+参考：
+
+[C 库函数 - sprintf()](https://www.runoob.com/cprogramming/c-function-sprintf.html)
 
 ***
 
@@ -563,3 +578,6 @@ enum　枚举名　{枚举元素1,枚举元素2,……};
 
 
 
+
+
+[length]: 
