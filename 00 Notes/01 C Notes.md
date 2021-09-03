@@ -548,19 +548,72 @@ int sprintf(char *str, const char *format, ...)
 - **str** -- 这是指向一个字符数组的指针，该数组存储了 C 字符串。
 - **format** -- 这是字符串，包含了要被写入到字符串 str 的文本。它可以包含嵌入的 format 标签，format 标签可被随后的附加参数中指定的值替换，并按需求进行格式化。
 
+```c
+#include <iostream>  
+#include <string>  
+using namespace std;    
+int main()   
+{       
+    int n = 30;   
+    char c[20];     //char *c;  
+    //%d十进制  
+    sprintf(c, "%d", n);     
+    cout << c << endl;      
+    //%o八进制  
+    sprintf(c, "%o", n);     
+    cout << c << endl;     
+    //%X大写十六进制  
+    sprintf(c, "%X", n);     
+    cout << c << endl;    
+    //%cACSII字元  
+    sprintf(c, "%c", n);     
+    cout << c << endl;    
+      
+    //%f浮点数转换  
+    float f = 24.678;      
+    sprintf(c, "%f", f);   
+    cout << c << endl;     
+    //%.2f"保留小数点后面两位  
+    sprintf(c, "%.2f", f);      
+    cout << c << endl;    
+    //转换两个数  
+    sprintf(c, "%d-%.2f", n, f);    
+    cout << c << endl;    
+  
+    system("pause");      
+    return 0;    
+}   
+```
+
+```
+30  
+36  
+1E  
+//注:这里是个特殊符号
+24.677999  
+24.68  
+30-24.68
+```
+
 参考：
 
 [C 库函数 - sprintf()](https://www.runoob.com/cprogramming/c-function-sprintf.html)
 
 ***
 
-## 0
+## 012. itoa函数
 
+#include <stdlib.h>
 
+***char \*itoa***( ***int value******, char \*string,int radix***);
 
+**原型说明：**
 
+**value**：欲转换的数据。
 
+***string***：目标字符串的地址。
 
+***radix***：转换后的进制数，可以是10进制、16进制等。
 
 ***
 
